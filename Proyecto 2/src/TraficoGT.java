@@ -65,13 +65,13 @@ private static final String DB_PATH = "target/neo4j-hello-db";
             // END SNIPPET: transaction
             // START SNIPPET: addData
             firstNode = graphDb.createNode();
-            firstNode.setProperty( "sensor", "Cuarto#1 ");
+            firstNode.setProperty( "persona", "Cuarto#1 ");
             secondNode = graphDb.createNode();
-            secondNode.setProperty( "sensor", "Cuarto#2 " );
+            secondNode.setProperty( "persona", "Cuarto#2 " );
             thirdNode = graphDb.createNode();
-            thirdNode.setProperty( "sensor", "Cuarto#3 " );
+            thirdNode.setProperty( "persona", "Cuarto#3 " );
             fourthNode = graphDb.createNode();
-            fourthNode.setProperty( "sensor", "Cuarto#4 " );
+            fourthNode.setProperty( "persona", "Cuarto#4 " );
             fithNode = graphDb.createNode();
             
             relationship12 = firstNode.createRelationshipTo( secondNode, RelTypes.KNOWS );
@@ -105,9 +105,9 @@ private static final String DB_PATH = "target/neo4j-hello-db";
             // END SNIPPET: addData
 
             // START SNIPPET: readData
-            System.out.print( firstNode.getProperty( "sensor" ) );
+            System.out.print( firstNode.getProperty( "persona" ) );
             System.out.print( relationship12.getProperty( "distancia" ) );
-            System.out.print( fithNode.getProperty( "sensor" ) );
+            
             
             System.out.print("\n");
 
@@ -126,7 +126,7 @@ private static final String DB_PATH = "target/neo4j-hello-db";
         {
             // START SNIPPET: removingData
             // let's remove the data
-            firstNode.getSingleRelationship( RelTypes.KNOWS, Direction.OUTGOING ).delete();
+           // firstNode.getSingleRelationship( RelTypes.KNOWS, Direction.OUTGOING ).delete();
             thirdNode.getSingleRelationship( RelTypes.KNOWS, Direction.OUTGOING ).delete();
             sixthNode.getSingleRelationship( RelTypes.KNOWS, Direction.OUTGOING ).delete();
             firstNode.delete();
